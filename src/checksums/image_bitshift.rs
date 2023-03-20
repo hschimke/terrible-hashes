@@ -5,9 +5,9 @@ pub fn calculate_checksum_checksum(data: &[u8]) -> u64 {
     let mut checksum: u64 = 0;
     for (i, byte) in data.iter().enumerate() {
         if i % 2 == 0 {
-            checksum = checksum ^ ((*byte as u64) << 1);
+            checksum ^= (*byte as u64) << 1;
         } else {
-            checksum = checksum ^ ((*byte as u64) >> 1);
+            checksum ^= (*byte as u64) >> 1;
         }
     }
     let side = ((data.len() / 4) as f64).sqrt().ceil() as u32;
