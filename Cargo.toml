@@ -1,0 +1,22 @@
+[package]
+name = "terrible-hashes"
+version = "0.1.0"
+edition = "2021"
+description = "A library consisting of a lot of very bad hash functions"
+license="Apache-2.0"
+repository="https://github.com/hschimke/terrible-hashes"
+keywords = ["hash", "bad-algorithms", "anti-patterns", "hashing-functions"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = { version = "0.24.5", optional = true }
+imageproc = { version = "0.23.0", optional = true }
+
+
+[features]
+default = ["image-bitshift", "equality-hashers"]
+all = ["image-bitshift", "equality-hashers"]
+image-bitshift = ["image", "imageproc"]
+equality-hashers = ["pure-equal"]
+pure-equal = []
