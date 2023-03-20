@@ -15,9 +15,10 @@ imageproc = { version = "0.23.0", optional = true }
 
 
 [features]
-default = ["image-bitshift", "equality-hashers", "tripple-string-hash"]
-all = ["image-bitshift", "equality-hashers"]
+default = ["all"]
+all = ["image-bitshift", "equality-hashers", "tripple-string-hash", "cosmological_constants"]
 image-bitshift = ["image", "imageproc"]
 equality-hashers = ["pure-equal"]
 pure-equal = []
 tripple-string-hash = []
+cosmological_constants = []
